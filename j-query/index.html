@@ -15,13 +15,14 @@
 <body>
     <div class="container-fluid">
 
+        <!-- modal 1 start -->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
             data-bs-whatever="@mdo">Heading</button>
 
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
-                    <form class="needs-validation" novalidate>
+                    <form class="heading_1" novalidate>
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Heading</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -45,6 +46,8 @@
             </div>
         </div>
 
+        <!-- modal 2 start -->
+
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1"
             data-bs-whatever="@fat">Sub-Heading</button>
 
@@ -52,7 +55,7 @@
             aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <form>
+                    <form class= "heading_2">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel1">Sub-Heading</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -81,6 +84,8 @@
             </div>
         </div>
 
+        <!-- modal 3 start -->
+
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2"
             data-bs-whatever="@getbootstrap">Form</button>
 
@@ -88,13 +93,13 @@
             aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <form id="myForm" method="POST">
+                    <form class= "heading_3" >
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Form</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form>
+                            <form class= "heading_3">
                                 <div class="form-group">
                                     <select class="form-select head form-select-lg mb-3"
                                         aria-label=".form-select-lg example">
@@ -111,43 +116,44 @@
                                     <select class="form-select type form-select-lg mb-3"
                                         aria-label=".form-select-lg example">
                                         <option selected>Select Type </option>
-                                        <option class="type" >Checkbox </option>
-                                        <option class="type" >Email </option>
-                                        <option class="type" >Name </option>
-                                        <option class="type" >label </option>
-                                        <option class="type" >place </option>
-                                        <option class="type" >class </option>
+                                        <option>Name</option>
+                                        <option>Email</option>
+                                        <option>Text</option>
+                                        <option>Number</option>
+                                        <option>Label</option>
+                                        <option>Place</option>
                                     </select>
                                 </div>
-                                <!-- <div class="form-group">
+                                <div class="form-group">
                                     <label for="recipient-name" class="col-form-label">Name:</label>
                                     <input type="text" class="form-control name" id="recipient-name"
                                         type="reset">
-                                </div>
-                                <div class="form-group">
+                                    <br>
+                                    <label for="message-text" class="col-form-label">Value:</label>
+                                    <input type="text" class="form-control value" id="recipient-name"
+                                    type="reset">
+                                    <br>
                                     <label for="message-text" class="col-form-label">class:</label>
                                     <input type="text" class="form-control clas" id="recipient-name"
                                     type="reset">
-                                </div>
-                                <div class="form-group">
+                                    <br>
                                     <label for="recipient-name" class="col-form-label">Label:</label>
                                     <input type="text" class="form-control label" id="recipient-name"
                                         type="reset">
-                                </div>
-                                <div class="form-group">
+                                    <br>
                                     <label for="recipient-name" class="col-form-label">Placeholder:</label>
-                                    <input type="text" class="form-control label" id="recipient-name"
+                                    <input type="text" class="form-control place" id="recipient-name"
                                         type="reset">
-                                </div> -->
+                                    <br>
+                                    <button type="button" class="btn btn-primary submit"
+                                    data-bs-dismiss="modal">Submit</button>
+                                    <button type="button" class="btn btn-secondary"
+                                    data-bs-dismiss="modal">Close</button>
+                                </div> 
                             </form>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary submit"
-                            data-bs-dismiss="modal">Submit</button>
-                            <button type="button" class="btn btn-secondary"
-                            data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </form>++
+                       
+                    </form>
                 </div>
             </div>
         </div>

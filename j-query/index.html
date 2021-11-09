@@ -22,23 +22,21 @@
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Heading</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
                     <form class="heading_1" >
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Heading</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
                         <div class="modal-body">
                             <div class="mb-3">
                                 <label for="recipient-name" class="col-form-label">Enter-Heading</label>
-                                <input type="text" class="form-control given" id="recipient-name"
-                                        type="reset">
+                                <input type="text" class="form-control given" id="recipient-name">
                                 <button type="button" class="btn btn-primary submit"
                                     data-bs-dismiss="modal">Submit</button>
                                 <button type="button" class="btn btn-secondary"
                                     data-bs-dismiss="modal">Close</button>
                             </div>
                         </div>
-
                     </form>
                 </div>
             </div>
@@ -67,7 +65,7 @@
                             <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Sub-Heading</label>
                                 <input type="text" class="form-control subgiven" id="recipient-name"
-                                        type="reset">
+                                         >
                                 <button type="button" class="btn btn-primary submit"
                                     data-bs-dismiss="modal">Submit</button>
                                 <button type="button" class="btn btn-secondary"
@@ -95,12 +93,14 @@
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
-                                <select class="form-select head form-select-lg mb-3"
+                                <label for="recipient-name" class="col-form-label">Heading:</label>
+                                <select  name="heading" class="form-select head form-select-lg mb-3"
                                     aria-label=".form-select-lg example">
-                                    <option class="values" selected>Select Headline </option>
+                                    <!-- <option value="heading"  name="heading" class="values" selected>Select Headline </option> -->
                                 </select>
                             </div>
                             <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Sub-Heading:</label>
                                 <select class="form-select subhead form-select-lg mb-3"
                                     aria-label=".form-select-lg example">
                                     <option class="subvalues" selected>Select Sub-Headline </option>
@@ -120,24 +120,19 @@
                             </div>
                             <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Label:</label>
-                                <input type="text" class="form-control label" id="recipient-name"
-                                    type="reset">
+                                <input type="text" class="form-control label" id="recipient-name">
                                 <br>
                                 <label for="message-text" class="col-form-label">class:</label>
-                                <input type="text" class="form-control clas" id="recipient-name"
-                                type="reset">
+                                <input type="text" class="form-control clas" id="recipient-name">
                                 <br>  
                                 <label for="message-text" class="col-form-label">Value:</label>
-                                <input type="text" class="form-control value" id="recipient-name"
-                                type="reset">
+                                <input type="text" class="form-control value" id="recipient-name">
                                 <br>                       
                                 <label for="recipient-name" class="col-form-label">Placeholder:</label>
-                                <input type="text" class="form-control place" id="recipient-name"
-                                    type="reset">
+                                <input type="text" class="form-control place" id="recipient-name">
                                 <br>
                                 <label for="recipient-name" class="col-form-label">Other:</label>
-                                <input type="text" class="form-control other" id="recipient-name"
-                                    type="reset">
+                                <input type="text" class="form-control other" id="recipient-name">
                                 <br>
                                 <button type="button" class="btn btn-primary submit"
                                 data-bs-dismiss="modal">Submit</button>

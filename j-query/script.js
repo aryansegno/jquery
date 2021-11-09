@@ -6,7 +6,7 @@ $(document).ready(function(){
         $(returnhead).each(function (key, val) {
             var key = key + 1;
             console.log(val['heading'])
-            $("main").append($("<section><h1>"+ val['heading'] +"<button type='button' class='btn-close' onclick='localFunction(this)'></button> </h1></section>"));
+            $("main").append($("<section><h1>"+ val['heading'] +" <button type='button' class='btn-close' onclick='myFunction(this)'></button> </h1></section>"));
             var a1 = $("main" ).val();
             console.log( a1 )
             $(".head").append("<option value="+key+">"+val['heading']+"</option>");
@@ -14,7 +14,7 @@ $(document).ready(function(){
             console.log( a2)
             localFunction()
             $(val['sub_arr']).each(function (key1, value1) {
-                $("main section:nth-child("+key+") ").append($("<div><h2>"+value1['subheading']+"<button type='button' class='btn-close' onclick='localFunction(this)'></button> </h2></div>"));
+                $("main section:nth-child("+key+") ").append($("<div><h2>"+value1['subheading']+" <button type='button' class='btn-close' onclick='myFunction(this)'></button> </h2></div>"));
                 localFunction()
                 $(value1['form']).each(function (key2, value2) {
                     var input_value = value2['input_value']
@@ -26,7 +26,7 @@ $(document).ready(function(){
                     var keysub = parseInt(key1) + 1;
                     if (input_value == "radio") {
                         var arr = value2['other'].split(',');
-                        var y = $("<p style='padding:10px'><label>"+label+"<button type='button' class='btn-close' onclick='localFunction(this)'></button> </label><br></p>");
+                        var y = $("<p style='padding:10px'><label>"+label+" <button type='button' class='btn-close' onclick='myFunction(this)'></button> </label><br></p>");
                         $.each(arr , function(i) {
                             y.append("<input type= " + input_value +" value="+arr[i]+">"+" " +arr[i]+ " ")  
                         });    
@@ -44,11 +44,11 @@ $(document).ready(function(){
                             console.log("x",arr1[i],"zebra")
                             y1.append("<option > "+ arr1[i] +"</option>");
                         });
-                        $("main section:nth-child("+key+") div:nth-child("+ parseInt(keysub + 1) +") ").append("<p style='padding:10px'><label>" + label + "<button type='button' class='btn-close' onclick='localFunction(this)'></button> </label></p>").append(y1);
+                        $("main section:nth-child("+key+") div:nth-child("+ parseInt(keysub + 1) +") ").append("<p style='padding:10px'><label>" + label + " <button type='button' class='btn-close' onclick='myFunction(this)'></button> </label></p>").append(y1);
                     }
                     else if (input_value == "checkbox") {
                         var arr2 = value2['other']
-                        var y2 = $("<p style='padding:10px'><label>"+label+"<button type='button' class='btn-close' onclick='localFunction(this)'></button> </label><br></p>");
+                        var y2 = $("<p style='padding:10px'><label>"+label+" <button type='button' class='btn-close' onclick='myFunction(this)'></button> </label><br></p>");
                         console.log(arr2)
                         $.each(arr2 , function(i) {
                             console.log("x",arr2[i],"zebra")
@@ -58,7 +58,7 @@ $(document).ready(function(){
                       
                     }
                     else if (input_value == "Textarea"){
-                        $("main section:nth-child("+key+") div:nth-child("+ parseInt(keysub + 1)  +") ").append($("<p><label>" + label + ":" + " </label> " + " <textarea type=  " + input_value + " " + " class = " + clas + " " + " placeholder=  " + placeholder + "  " + "></textarea><button type='button' class='btn-close' onclick='localFunction(this)'></button> </p>"));
+                        $("main section:nth-child("+key+") div:nth-child("+ parseInt(keysub + 1)  +") ").append($("<p><label>" + label + ":" + " </label> " + " <textarea type=  " + input_value + " " + " class = " + clas + " " + " placeholder=  " + placeholder + "  " + "></textarea> <button type='button' class='btn-close' onclick='myFunction(this)'></button> </p>"));
                        
                     }
                     
@@ -75,9 +75,10 @@ $(document).ready(function(){
 
     $('.heading_1').on('click', '.submit',function() {
         var inputs = $('.given').val();
-        $("main").append("<section><h1>"+inputs+"<button type='button' class='btn-close' onclick='localFunction(this)'></button></h1></section>");
+        $("main").append("<section><h1>"+inputs+" <button type='button' class='btn-close' onclick='myFunction(this)'></button></h1></section>");
         // $("option").append("<div><h1>"+inputs+"</h1></div>");
         $(".head option").remove();
+        $(".head").append('<option value=select sub_heading>select heading</option>');
         $("main section h1 ").each(function(index) {
             index=index+1;
             var images = $(this).text();
@@ -91,10 +92,8 @@ $(document).ready(function(){
     
     
         // })
-
-  
-          
-        
+ 
+        $('.heading_1')[0].reset()
         $('.heading_1')
         // arr_local.push({ 'heading': heading1, 'sub_arr': [] })
         localFunction()
@@ -109,22 +108,26 @@ $(document).ready(function(){
 
         // console.log(headings, '........')
         $(".subhead option").remove();
-        $("main section:nth-child("+headings+") ").append("<div><h2>"+subinput+"<button type='button' class='btn-close' onclick='localFunction(this)'></button> </h2></div>");
+        $("main section:nth-child("+headings+") ").append("<div><h2>"+subinput+" <button type='button' class='btn-close' onclick='myFunction(this)'></button> </h2></div>");
+        $(".subhead").append('<option value=select sub_heading>select sub_heading</option>');
         $("main section div h2 ").each(function(subkey) {
             subkey=subkey+1;
             var subimages = $(this).text();
             console.log(subimages, '....subheadig....',subkey)
             $(".subhead").append("<option value="+subkey+">"+subimages+"</option>");
         });     
+        $('.heading_2')[0].reset()
         $('.heading_2')     
         // arr_local[heading_index - 1].sub_arr.push({ 'subheading': sub_heading, 'form': [] }) 
         localFunction()
+        $('#exampleModal1').modal('hide');
     });
 
-    $(".head").change(function () {
+    $(".head").click(function () {
         var newheadings = $(this).val();
         // console.log(subimages, '....subheadig....',)
         $(".subhead option").remove();
+        $(".subhead").append('<option value=select sub_heading>select sub_heading</option>');
         $("main section:nth-child("+newheadings+") h2 ").each(function(subkey) {
             subkey=subkey+1;
             var subimages = $(this).text();
@@ -150,7 +153,7 @@ $(document).ready(function(){
         // $("main section:nth-child("+head1+") div:nth-child("+subhead1+") ").append("<div><p><label>" + label + ":" + " </label> " + " <input type> "+input_value+" 
         if (input_value == "radio") {
             var arr = $('.other').val().split(",");
-            var y = $("<p style='padding:10px'><label>"+label+"<button type='button' class='btn-close' onclick='localFunction(this)'></button> </label><br></p>")
+            var y = $("<p style='padding:10px'><label>"+label+" <button type='button' class='btn-close' onclick='myFunction(this)'></button> </label><br></p>")
             console.log(arr )
             $.each(arr , function(i) {
                 console.log("x",arr[i],"zebra")
@@ -169,11 +172,11 @@ $(document).ready(function(){
                 console.log("x",arr1[i],"zebra")
                 y1.append("<option > "+ arr1[i] +"</option>");
             });
-            $("main section:nth-child("+head1+") div:nth-child("+subhead1+") ").append("<p style='padding:10px'><label>" + label + "<button type='button' class='btn-close' onclick='localFunction(this)'></button> </label></p>").append(y1)
+            $("main section:nth-child("+head1+") div:nth-child("+subhead1+") ").append("<p style='padding:10px'><label>" + label + " <button type='button' class='btn-close' onclick='myFunction(this)'></button> </label></p>").append(y1)
         }
         else if (input_value == "checkbox") {
             var arr2 = $('.other').val().split(",");
-            var y2 = $("<p style='padding:10px'><label>"+label+"<button type='button' class='btn-close' onclick='localFunction(this)'></button> </label><br></p>")
+            var y2 = $("<p style='padding:10px'><label>"+label+" <button type='button' class='btn-close' onclick='myFunction(this)'></button> </label><br></p>")
             console.log(arr2)
             $.each(arr2 , function(i) {
                 console.log("x",arr2[i],"arr2")
@@ -182,23 +185,21 @@ $(document).ready(function(){
             $("main section:nth-child("+head1+") div:nth-child("+subhead1+") ").append(y2)
         }
         else if (input_value == "Textarea"){
-            $("main section:nth-child("+head1+") div:nth-child("+subhead1+") ").append("<p><label>" + label + ":" + " </label> " + " <textarea type=  " + input_value + " " + " class = " + clas + " " + " placeholder=  " + placeholder + "  " + "></textarea><button type='button' class='btn-close' onclick='localFunction(this)'></button> </p>")
+            $("main section:nth-child("+head1+") div:nth-child("+subhead1+") ").append("<p><label>" + label + ":" + " </label> " + " <textarea type=  " + input_value + " " + " class = " + clas + " " + " placeholder=  " + placeholder + "  " + "></textarea> <button type='button' class='btn-close' onclick='myFunction(this)'></button> </p>")
         }
         else {
             $("main section:nth-child("+head1+") div:nth-child("+subhead1+") ").append("<p>"+"value="+value+"<br>"+"class= "+clas+"<br>"+"label= "+label+"<br>"+"placeholder="+placeholder+"</p>")
         }
+        $('.heading_3')[0].reset()
+        $('.heading_3')
         localFunction() 
     });
    
-
-
 });
 
 
-function localFunction(el ) {
-    // el.parentNode.parentNode.parentNode.removeChild(el.parentNode.parentNode)
+function localFunction( ) {
     var arr_local = []
-    // window.localStorage.clear();
     $('main section h1').each(function (key, val) {
         var heading1 = $(this).text()
         var key = key + 1
@@ -219,6 +220,14 @@ function localFunction(el ) {
     })
     window.localStorage.setItem('arr_local', JSON.stringify(arr_local));
 }
+
+function myFunction(el ) {
+    el.parentNode.parentNode.parentNode.removeChild(el.parentNode.parentNode)
+    var arr_local = []
+    window.localStorage.clear();
+    window.localStorage.setItem('arr_local', JSON.stringify(arr_local));
+}
+
 
     
 

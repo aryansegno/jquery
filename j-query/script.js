@@ -169,18 +169,25 @@ $(document).ready(function(){
         // var head = parseInt(head)+1;
         var subhead1 = parseInt(subhead1)+1;
         console.log(head1,'....abcde....',value,clas,label,placeholder,other,"...",subhead1)
-        // $("main section:nth-child("+head1+") div:nth-child("+subhead1+") ").append("<div><p><label>" + label + ":" + " </label> " + " <textarea type=  " + input_class + " " + " class = " + clas + " " + " placeholder=  " + placeholder + "  " + "></textarea></p></div>")
-        // $("main section:nth-child("+head1+") div:nth-child("+subhead1+") ").append("<div><p style='padding:10px'><form class='form'> "+" <label class = 'label'> "+label + ":" + " </label> " + "  " + input_class + " " + " class = " + clas + " " + " placeholder=  " + placeholder + "  " + " value=  " + value + " " + "></form></p></div>")       
-        // $("main section:nth-child("+head1+") div:nth-child("+subhead1+") ").append("<div><p><label>" + label + ":" + " </label> " + " <input type> "+input_class+" 
+        // $.each(arr0, function (i) {
+        //     if (arr0[i] == value ){
+                
+        //     }
+
+        // });
         if (input_class == "radio") {
             var arr = $('.other').val().split(",");
             var y = $("<p style='padding:10px'><label>"+label+" <button type='button' class='btn-close' onclick='myFunction(this)'></button> </label></p>")
             console.log(arr )
             $.each(arr , function(i) {
-                console.log("x",arr[i],"zebra")
-                y.append("<input type= " + input_class +" value="+arr[i]+">"+" " +arr[i]+ " ")                
-            });         
-            // arr_local[head1 - 1].sub_arr[subhead1 - 1].form.push({ 'option': arr[i], 'input_class': input_class }) 
+                if (arr[i] == value ){
+                    y.append("<input type= " + input_class +" value="+arr[i]+" "+"checked>"+" " +arr[i]+ " " ); 
+                }
+                else{
+                    console.log("x",arr[i],"zebra")
+                    y.append("<input type= " + input_class +" value="+arr[i]+">"+" " +arr[i]+ " ") 
+                }              
+            });
 
             $("main section:nth-child("+head1+") div:nth-child("+subhead1+") ").append($(y))
 
@@ -190,8 +197,14 @@ $(document).ready(function(){
             var y1 = $("<select >"+"<option>Select Value</option>"+"</select>");
             console.log(arr1 )
             $.each(arr1 , function(i) {
-                console.log("x",arr1[i],"zebra")
-                y1.append("<option > "+ arr1[i] +"</option>");
+                if (arr1[i] == value ){
+                    y1.append("<option selected> "+ arr1[i] +"</option>");
+
+                }
+                else{
+                    console.log("x",arr1[i],"zebra")
+                    y1.append("<option > "+ arr1[i] +"</option>");
+                }
             });
             $("main section:nth-child("+head1+") div:nth-child("+subhead1+") ").append("<p style='padding:10px'><label>" + label + " <button type='button' class='btn-close' onclick='myFunction(this)'></button> </label></p>").append(y1)
         }
@@ -200,8 +213,13 @@ $(document).ready(function(){
             var y2 = $("<p style='padding:10px'><label>"+label+" <button type='button' class='btn-close' onclick='myFunction(this)'></button> </label></p>")
             console.log(arr2)
             $.each(arr2 , function(i) {
-                console.log("x",arr2[i],"arr2")
-                y2.append("<input type= checkbox " + input_class + "value= " +arr2[i]+ ">"+" "+arr2[i]+" ")
+                if (arr2[i] == value ){
+                    y2.append("<input type= " + input_class +" value="+arr2[i]+" "+"checked>"+" " +arr2[i]+ " " ); 
+                }
+                else{
+                    console.log("x",arr2[i],"arr2")
+                    y2.append("<input type= checkbox " + input_class + "value= " +arr2[i]+ ">"+" "+arr2[i]+" ")
+                }
             });
             $("main section:nth-child("+head1+") div:nth-child("+subhead1+") ").append(y2)
         }
